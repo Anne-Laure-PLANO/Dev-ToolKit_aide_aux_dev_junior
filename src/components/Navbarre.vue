@@ -39,9 +39,11 @@ export default {
       <router-link to="/readme">
         <div class="onglet">📄 Générateur de README</div>
       </router-link>
-      <div class="onglet">
-        🔀 Aide Git
-      </div>
+      <router-link to="/git">
+        <div class="onglet">
+          🔀 Aide Git
+        </div>
+      </router-link>
     </nav>
   </div>
 </template>

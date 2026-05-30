@@ -17,7 +17,8 @@ export default {
         description: "",
         status: "",
         skills: [],
-        install: "",
+        installLinux: "",
+        installWindows: "",
         exec: "",
       }
     }
@@ -39,21 +40,28 @@ export default {
     sendDataToParent(){
       this.$emit("formUpdated",this.dataToReturn)
     },
-    toggleSkill(skil) {
-      const skill = skil;
+    toggleSkill(data) {
+      const skill = data;
       const index = this.dataToReturn.skills.findIndex(s => s.id === skill.id);
       console.log("skill.install :" + JSON.stringify(skill.install));
       if (index === -1) {
         this.dataToReturn.skills.push(skill);
-
-        this.dataToReturn.install += skill.install;
-        this.dataToReturn.exec += skill.exec;
       } else {
         this.dataToReturn.skills.splice(index, 1);
-
       }
+        this.updateTextAreas();
 
     },
+    updateTextAreas(){
+      this.dataToReturn.installLinux = "";
+      this.dataToReturn.installWindows = "";
+      this.dataToReturn.exec = "";
+      for (let i = 0 ; i<this.dataToReturn.skills.length ; i++){
+        this.dataToReturn.installLinux += this.dataToReturn.skills[i].installLinux + "\n";
+        this.dataToReturn.installWindows += this.dataToReturn.skills[i].installWindows + "\n";
+        this.dataToReturn.exec += this.dataToReturn.skills[i].exec + "\n";
+      }
+    }
 
   }
 }
@@ -90,8 +98,14 @@ export default {
         <div v-for="skill in skills.native"
           :key="skill.id"
         >
-          <input  type="checkbox" :name="skill.title" v-model="dataToReturn.skills" :value="skill" :id=" skill.title">
-          <label :for=" skill.title ">{{ skill.title }}</label>
+          <input  type="checkbox"
+                  :name="skill.title"
+                  @click="toggleSkill(skill)"
+                  :checked = "(dataToReturn.skills.findIndex(s=> s.id === skill.id) !== -1)"
+                  :value="skill"
+                  :id=" skill.id"
+          >
+          <label :for=" skill.id ">{{ skill.title }}</label>
         </div>
       </div>
 
@@ -102,22 +116,24 @@ export default {
         <multi-select-drop-down
               v-for="cat in skills.framework"
                 :key="cat.category"
-
-
-            :skillTitle= "cat.category"
-            :options="cat.skills"
-            @DropDownComponent="toggleSkill($event)"
+                :skillTitle= "cat.category"
+                :options="cat.skills"
+                @DropDownComponent="toggleSkill($event)"
 
         />
-        hello {{ dataToReturn.install }}
         </div>
 
     </fieldset>
     <fieldset class="install">
       <legend>Guide d'installation</legend>
+      <p>Attention : Veillez à bien saisir toutes les technologies utilisées avant d'apporter des modifications aux commandes. <br> Toute modification réalisée avant sélection d'une technologie ne sera pas prise en compte.</p>
       <div>
-        <label for="installation">Commandes d'installation :</label><br>
-        <textarea v-model="dataToReturn.install"  placeholder="commandes pré-saisies modifiables ici" id="installation"></textarea>
+        <label for="installLinux">Commandes d'installation Linux :</label><br>
+        <textarea v-model="dataToReturn.installLinux"  placeholder="commandes pré-saisies modifiables ici" id="installLinux"></textarea>
+      </div>
+      <div>
+        <label for="installWindows">Commandes d'installation Windows :</label><br>
+        <textarea v-model="dataToReturn.installWindows"  placeholder="commandes pré-saisies modifiables ici" id="installWindows"></textarea>
       </div>
       <div>
         <label for ="run">Commandes d'exécution : </label><br>

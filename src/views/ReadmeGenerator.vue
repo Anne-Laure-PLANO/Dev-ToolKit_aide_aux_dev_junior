@@ -137,13 +137,25 @@ ${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() +
 
   </main>
   <footer>
-    <button @click="resetForm">Réinitialiser</button>
-    <button @click="copyMarkdown">Copier</button>
+      <button @click="resetForm">Réinitialiser</button>
+      <button @click="copyMarkdown">Copier</button>
   </footer>
 </template>
 
 <style scoped>
+footer{
+  border-top: 1px solid grey;
+  display: flex;
+  position: sticky;
+  bottom: 0;
+  background: blue;
+}
+footer>button{
+  flex:1;
+  padding:10px;
+  margin:10px;
 
+}
 .readmeMenu{
   display: flex;
   border : 1px solid #C5C3C3;

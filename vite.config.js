@@ -4,7 +4,6 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/Dev-ToolKit_aide_aux_dev_junior/',
   plugins: [vue()],
   resolve: {
     alias: {
