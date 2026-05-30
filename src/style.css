@@ -1,0 +1,38 @@
+body{
+  background: #FFFFFF;
+  margin:0;
+  padding:0;
+  min-height: 100vh;
+
+}
+h1{
+  display: block;
+  margin:0;
+  padding-top:6px;
+}
+header{
+  background: #ffffff;
+}
+header>p{
+  margin-top:0;
+}
+main{
+  padding-top:10px;
+  border-radius: 15px 15px 0 0 ;
+  border-top: #C5C3C3 1px solid;
+  background: #F7F7FA;
+  display:flex;
+  flex-direction: column;
+}
+.coloredBlock{
+  background: #01849B;
+  padding:5px;
+  margin: 0 5px 0 5px;
+  border-radius:20px;
+}
+.coloredBlock>p{
+  color:white;
+  text-align: center;
+  font-weight : 500;
+
+}
