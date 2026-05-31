@@ -26,7 +26,7 @@ export default {
       this.news = await fetchNews();
       this.loading=false;
     } catch (e){
-      this.error=true;
+      this.error= e;
       this.loading = false;
     }
 
