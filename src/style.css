@@ -24,7 +24,10 @@
 
 
 }
+*{
+  font-family: var(--font-family-text);
 
+}
 body{
   background: var(--bg-color-general);
   margin:0;

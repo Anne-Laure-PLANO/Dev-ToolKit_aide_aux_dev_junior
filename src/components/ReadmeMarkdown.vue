@@ -14,7 +14,7 @@ export default {
 <div>
   <h2>Readme markdown</h2>
     <div>
-    <p v-if="md === null">Nothing here </p>
+    <p v-if="md.length===0">Nothing here </p>
   <pre>{{ md }}</pre>
 
     </div>

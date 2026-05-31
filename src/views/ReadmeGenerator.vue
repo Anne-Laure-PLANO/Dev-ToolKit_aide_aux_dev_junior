@@ -108,14 +108,21 @@ ${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() +
       <p>Créez un README adapté à vos projets</p>
     </div>
     <section class="readmeMenu">
-      <div @click="activeComponent = 'A'" >
+      <div @click="activeComponent = 'A'"
+      :class="{active: activeComponent==='A'}"
+      >
         Formulaire
       </div>
-      <div @click="activeComponent = 'B'" >
-        Code
+      <div @click="activeComponent = 'B'"
+           :class="{active: activeComponent==='B'}"
+
+      >
+        Markdown
       </div>
-      <div @click="activeComponent = 'C'" >
-        Résultat
+      <div @click="activeComponent = 'C'"
+           :class="{active: activeComponent==='C'}"
+      >
+        Aperçu
       </div>
 
     </section>
@@ -137,8 +144,8 @@ ${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() +
 
   </main>
   <footer>
-      <button @click="resetForm">Réinitialiser</button>
-      <button @click="copyMarkdown">Copier</button>
+      <button class="reset" @click="resetForm">Réinitialiser</button>
+      <button class="copy" @click="copyMarkdown">Copier</button>
   </footer>
 </template>
 
@@ -167,16 +174,36 @@ footer>button{
   text-align: center;
   margin : 10px 0 0 0;
   padding-bottom : 10px;
+  cursor:pointer;
 }
-.readmeMenu>div:hover{
+
+.readmeMenu>div:hover,
+.readmeMenu>div.active{
   color: var(--bg-color-description);
   font-weight: var(--font-weight-title);
   border-bottom: var(--bg-color-description) 2px solid;
+
 
 }
 .displayComponent{
   display:flex;
   flex:2;
+}
+
+.copy, .reset{
+  color: var(--font-color-white);
+  font-family: var(--font-family-text),serif;
+}
+.reset{
+  background: var(--bg-color-reset-button);
+
+}
+.copy:hover,.reset:hover{
+  box-shadow: var(--font-color-menu-readme) 0 3px 3px 0;
+  font-weight: bold;
+}
+.copy{
+  background: var(--bg-color-description);
 }
 
 
