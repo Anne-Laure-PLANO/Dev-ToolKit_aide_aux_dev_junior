@@ -40,7 +40,6 @@ export default {
   <header class="titleBlock">
       <h1>Dev-ToolKit</h1>
       <p>L'outil d'assistance au développement</p>
-    <h3>Titre h3</h3>
   </header>
   <main>
     <div class="coloredBlock">
