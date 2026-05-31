@@ -27,4 +27,7 @@ div{
   flex:1;
 
 }
+pre{
+  font-family: var(--font-family-code),serif;
+}
 </style>

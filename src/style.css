@@ -12,22 +12,19 @@
   --font-color-white: #ffffff;
   --font-color-black: #000000;
 
-  --font-family-title : Roboto, serif;
+  --font-family-title : Roboto;
   --font-weight-title : 700;
   --size-title-h1 : 2rem;
   --size-title-h2 : 1.5rem;
   --size-title-h3 : 1.17rem;
   --size-text : 1rem;
 
-  --font-family-text: Roboto, serif;
-  --font-family-code: "JetBrains Mono", serif;
+  --font-family-text: Roboto;
+  --font-family-code: "monospace";
 
 
 }
-*{
-  font-family: var(--font-family-text);
 
-}
 body{
   background: var(--bg-color-general);
   margin:0;
@@ -35,11 +32,13 @@ body{
   min-height: 100vh;
 
 }
-h1{
-  font-family: var(--font-family-title);
-  display: block;
+h1, h2, h3{
+  font-family: var(--font-family-title), serif;
   margin:0;
   padding-top:6px;
+}
+p, div{
+  font-family: var(--font-family-text), serif;
 }
 header{
   background: var(--bg-color-general);

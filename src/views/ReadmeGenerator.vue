@@ -75,12 +75,11 @@ export default {
       return result1 + this.cb + "\n\n" + result2 + this.cb + "\n\n" + result3 + this.cb + "\n\n";
     },
     generateMarkdown(){
-      this.markdown = `
-${this.result.title? "# " + this.result.title + "  \n" : ""}
+      this.markdown =
+`${this.result.title? "# " + this.result.title + "  \n" : ""}
 ${(this.result.description)? this.result.description + "  \n" : ""}
 ${this.markdownStatus()}
 ${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() + this.markdownInstall() :""}
-
 `
     },
     copyMarkdown(){
@@ -201,6 +200,7 @@ footer>button{
 .copy:hover,.reset:hover{
   box-shadow: var(--font-color-menu-readme) 0 3px 3px 0;
   font-weight: bold;
+  cursor: pointer;
 }
 .copy{
   background: var(--bg-color-description);

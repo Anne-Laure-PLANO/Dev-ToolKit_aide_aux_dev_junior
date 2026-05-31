@@ -69,14 +69,14 @@ export default {
 
 <template>
   <form>
-    <div>
-      <label for="title">Titre du projet :</label><br>
-      <input type="text" class="text" v-model="dataToReturn.title" id="title">
-    </div>
-    <div>
-      <label for="description">Description courte :</label><br>
-      <textarea v-model="dataToReturn.description" id="description"></textarea>
-    </div>
+      <div class="title">
+        <label for="title">Titre du projet :</label><br>
+        <input type="text" class="text" v-model="dataToReturn.title" id="title">
+      </div>
+      <div class="desc">
+        <label for="description">Description courte :</label><br>
+        <textarea v-model="dataToReturn.description" id="description"></textarea>
+      </div>
     <fieldset class="radioButton">
       <legend>Statut </legend>
           <div>
@@ -110,9 +110,6 @@ export default {
       </div>
 
       <div class="column">
-
-
-
         <multi-select-drop-down
               v-for="cat in skills.framework"
                 :key="cat.category"
@@ -145,21 +142,47 @@ export default {
 </template>
 
 <style scoped>
+form{
+  width:90%;
+  margin:1rem auto;
+}
 fieldset{
   border: none;
   display:flex;
+  margin:0;
+  padding:0;
+}
+.title, .desc{
+  padding-top:10px;
 }
 legend{
   color: var(--bg-color-description);
+  padding-top:1rem;
+  padding-bottom : 0.5rem;
+
+}
+p{
+  font-style: italic;
+  color: var(--bg-color-reset-button);
+  font-size: 0.7rem;
+}
+
+textarea, .text{
+  width:100%;
+  border: var(--border-color) 1px solid;
+  border-radius: 5px;
 }
 .text{
-  width:80%;
+  height: 1.5rem;
 }
 textarea{
-  width:80%;
+  height: 3rem;
 }
 .column{
   flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .radioButton>div{
   flex:1;
@@ -167,6 +190,7 @@ textarea{
 .radioButton>div:hover{
   color:var(--bg-color-reset-button);
 }
+
 .install{
   display:block;
 }

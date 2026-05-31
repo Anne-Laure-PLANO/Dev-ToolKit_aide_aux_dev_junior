@@ -17,7 +17,7 @@ export default {
 <template>
   <section>
     <div>
-      <h2>Readme result</h2>
+      <p v-if="renderedMarkdown.length===0">Nothing here </p>
 
     </div>
     <div class="content" v-html="renderedMarkdown"></div>
