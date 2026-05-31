@@ -150,7 +150,7 @@ fieldset{
   display:flex;
 }
 legend{
-  color:blue;
+  color: var(--bg-color-description);
 }
 .text{
   width:80%;
@@ -165,7 +165,7 @@ textarea{
   flex:1;
 }
 .radioButton>div:hover{
-  color:red;
+  color:var(--bg-color-reset-button);
 }
 .install{
   display:block;

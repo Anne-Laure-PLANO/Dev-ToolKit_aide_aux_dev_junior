@@ -90,7 +90,7 @@ nav{
   background: #2E3345;
 }
 .navPC{
-  background: #1A1C26;
+  background: var(--bg-color-navbarre);
   position: sticky;
   top:0;
 

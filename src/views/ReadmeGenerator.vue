@@ -119,7 +119,7 @@ ${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() +
       </div>
 
     </section>
-    <section>
+    <section class="displayComponent">
 
       <ReadmeForm
           :key="formKey"
@@ -144,11 +144,11 @@ ${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() +
 
 <style scoped>
 footer{
-  border-top: 1px solid grey;
+  border-top: 1px solid var(--border-color);
   display: flex;
   position: sticky;
   bottom: 0;
-  background: blue;
+  background: var(--bg-color-general);
 }
 footer>button{
   flex:1;
@@ -165,11 +165,18 @@ footer>button{
 .readmeMenu>div{
   flex:1;
   text-align: center;
-  margin : 10px 0 10px 0;
+  margin : 10px 0 0 0;
+  padding-bottom : 10px;
 }
 .readmeMenu>div:hover{
-  color:red;
+  color: var(--bg-color-description);
+  font-weight: var(--font-weight-title);
+  border-bottom: var(--bg-color-description) 2px solid;
 
+}
+.displayComponent{
+  display:flex;
+  flex:2;
 }
 
 

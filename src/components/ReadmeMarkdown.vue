@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-<section>
+<div>
   <h2>Readme markdown</h2>
     <div>
     <p v-if="md === null">Nothing here </p>
@@ -19,12 +19,12 @@ export default {
 
     </div>
 
-</section>
+</div>
 </template>
 
 <style scoped>
-section{
-  height: 100vh;
+div{
+  flex:1;
 
 }
 </style>

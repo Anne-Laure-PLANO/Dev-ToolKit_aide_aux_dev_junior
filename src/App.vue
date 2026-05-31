@@ -5,7 +5,9 @@ import Navbarre from "@/components/Navbarre.vue";
 
 <template>
   <div class="container" >
-    <Navbarre/>
+    <div>
+      <Navbarre/>
+    </div>
     <div class="app">
       <router-view/>
     </div>
@@ -13,18 +15,23 @@ import Navbarre from "@/components/Navbarre.vue";
 </template>
 
 <style>
-
+.container{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height:100vh;
+}
+.app{
+  flex:1;
+}
 
 @media screen and (min-width : 1200px) {
 
   .container{
-    display: flex;
-    min-height:100vh;
+    flex-direction: row;
+    height: 100vh;
     align-items: flex-start;
 
-  }
-  .app{
-    flex:1;
   }
 }
 </style>
