@@ -8,12 +8,12 @@ export async function fetchNews (){
     }
 
     const data = await response.json()
-        const cleanArticles = await data.items.map((article)=>{
+        const cleanArticles = data.items.map((article)=>{
             return {
                 ...article,
                 title: htmlToText(article.title),
                 description: htmlToText(article.description),
-                guid: removeQueryParams(article.guid),
+                guid: getOrigin(article.guid),
                 pubDate: formatDate(article.pubDate)
             }
         })
@@ -28,7 +28,7 @@ function htmlToText (html){
 }
 
 
-function removeQueryParams(link) {
+function getOrigin(link) {
     const url = new URL(link);
 
     return url.origin;

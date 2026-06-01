@@ -54,8 +54,7 @@ export default {
   justify-content: space-between;
   padding-top : 15px;
   padding-bottom : 10px;
-  position: sticky;
-  top:0;
+
 }
 .logo{
   display: block;

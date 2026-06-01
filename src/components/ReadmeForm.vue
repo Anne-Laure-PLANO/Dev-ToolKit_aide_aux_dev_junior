@@ -188,7 +188,8 @@ textarea{
   flex:1;
 }
 .radioButton>div:hover{
-  color:var(--bg-color-reset-button);
+  color:var(--bg-color-description);
+
 }
 
 .install{

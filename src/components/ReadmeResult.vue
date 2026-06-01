@@ -1,5 +1,6 @@
 <script>
 import { marked } from "marked";
+import DOMPurify from "dompurify";
 
 export default {
   name: "ReadmeResult",
@@ -8,7 +9,8 @@ export default {
   },
   computed:{
     renderedMarkdown(){
-      return marked(this.mdFinal);
+      const html = marked(this.mdFinal);
+      return DOMPurify.sanitize(html);
     }
   }
 }
