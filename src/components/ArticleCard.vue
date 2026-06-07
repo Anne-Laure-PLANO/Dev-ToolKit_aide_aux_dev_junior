@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "New",
+  name: "ArticleCard",
   props:{
     title: {type:String, default:"Titre de l'article"},
     lastUpdate: {type: String, default: "date"},
@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-  <div class="card">
+  <article class="card">
     <div class="cardTitle">
     <p class="cardDate">📅{{ lastUpdate }}</p>
     <p>Source : {{ source }}</p>
@@ -20,15 +20,15 @@ export default {
     </div>
     <h3>{{ title }}</h3>
     <img :src="picture" alt="image de l'article">
-  </div>
+  </article>
 </template>
 
 <style scoped>
 .card{
-  border: 1px solid #DEE0E8;
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   width:80%;
-  background: #FFFFFF;
+  background: var(--bg-color-general);
   padding: 10px;
   margin: 5px auto;
 }
@@ -38,7 +38,8 @@ export default {
 }
 .cardDate{
   border-radius: 4px;
-  background: #EDF2FC;
+  border: 1px solid var(--border-color);
+  background: var(--bg-color-component);
   padding:0 5px 5px 0;
 }
 

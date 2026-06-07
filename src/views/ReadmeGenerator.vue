@@ -4,7 +4,7 @@ import ReadmeMarkdown from "../components/ReadmeMarkdown.vue";
 import ReadmeResult from "../components/ReadmeResult.vue";
 
 export default {
-  name: "readme",
+  name: "readmeGenerator",
   components: {
     ReadmeForm,
     ReadmeMarkdown,
@@ -106,7 +106,7 @@ ${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() +
     <div class="coloredBlock">
       <p>Créez un README adapté à vos projets</p>
     </div>
-    <section class="readmeMenu">
+    <div class="readmeMenu">
       <div @click="activeComponent = 'A'"
       :class="{active: activeComponent==='A'}"
       >
@@ -124,8 +124,8 @@ ${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() +
         Aperçu
       </div>
 
-    </section>
-    <section class="displayComponent">
+    </div>
+    <div class="displayComponent">
 
       <ReadmeForm
           :key="formKey"
@@ -139,7 +139,7 @@ ${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() +
       <ReadmeResult v-show="activeComponent === 'C'"
           :mdFinal = "markdown"
       />
-    </section>
+    </div>
 
   </main>
   <footer>
@@ -149,6 +149,12 @@ ${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() +
 </template>
 
 <style scoped>
+main{
+  flex:1;
+  overflow-y: auto;
+  min-height: 0;
+
+}
 footer{
   border-top: 1px solid var(--border-color);
   display: flex;
@@ -164,9 +170,9 @@ footer>button{
 }
 .readmeMenu{
   display: flex;
-  border : 1px solid #C5C3C3;
+  border : 1px solid var(--border-color);
   margin-top:10px;
-  background: #ffffff;
+  background: var(--bg-color-general);
 }
 .readmeMenu>div{
   flex:1;
@@ -178,18 +184,20 @@ footer>button{
 
 .readmeMenu>div:hover,
 .readmeMenu>div.active{
-  color: var(--bg-color-description);
+  color: var(--bg-color-logo);
   font-weight: var(--font-weight-title);
-  border-bottom: var(--bg-color-description) 2px solid;
+  border-bottom: var(--bg-color-logo) 2px solid;
 
 
 }
 .displayComponent{
   display:flex;
+  align-items: stretch;
   flex:2;
 }
 
 .copy, .reset{
+  font-size: 1rem;
   color: var(--font-color-white);
   font-family: var(--font-family-text),serif;
 }
@@ -198,12 +206,12 @@ footer>button{
 
 }
 .copy:hover,.reset:hover{
-  box-shadow: var(--font-color-menu-readme) 0 3px 3px 0;
+  box-shadow: var(--shadow) 0 3px 3px 0;
   font-weight: bold;
   cursor: pointer;
 }
 .copy{
-  background: var(--bg-color-description);
+  background: var(--bg-color-logo);
 }
 
 

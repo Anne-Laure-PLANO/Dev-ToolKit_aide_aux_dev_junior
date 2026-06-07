@@ -1,9 +1,9 @@
 <script>
 import {fetchNews} from "@/services/fetchNews.js";
-import New from "@/components/New.vue";
+import ArticleCard from "@/components/ArticleCard.vue";
 
 export default {
-  name: "accueil",
+  name: "HomePage",
   data(){
     return {
       loading: false,
@@ -16,7 +16,7 @@ export default {
 
   },
   components:{
-    New,
+    New: ArticleCard,
   },
   async mounted(){
     this.loading = true;

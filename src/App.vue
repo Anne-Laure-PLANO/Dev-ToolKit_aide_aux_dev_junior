@@ -5,9 +5,7 @@ import Navbarre from "@/components/Navbarre.vue";
 
 <template>
   <div class="container" >
-    <div>
       <Navbarre/>
-    </div>
     <div class="app">
       <router-view/>
     </div>
@@ -20,9 +18,14 @@ import Navbarre from "@/components/Navbarre.vue";
   flex-direction: column;
   flex-grow: 1;
   height:100vh;
+  overflow: hidden;
 }
 .app{
   flex:1;
+  overflow-y: auto; /* c'est .app qui scrolle, pas la page */
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 @media screen and (min-width : 1200px) {
@@ -30,7 +33,8 @@ import Navbarre from "@/components/Navbarre.vue";
   .container{
     flex-direction: row;
     height: 100vh;
-    align-items: flex-start;
+    align-items: stretch;
+    overflow: hidden;
 
   }
 }

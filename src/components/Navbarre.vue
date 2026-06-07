@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "navMobile",
+  name: "NavBarre",
   data(){
     return{
       mobileMenu : false
@@ -29,8 +29,10 @@ export default {
 <template>
   <div class="navPC">
     <div class="navMobile">
-      <img class="logo" src="@/assets/logo.png" alt="logo">
-      <img class="menuLogo" @click="displayMenu($event)" src="@/assets/burger-blanc.png" alt="menu">
+      <router-link to="/">
+        <img class="logo" src="@/assets/logo.png" alt="logo">
+      </router-link>
+      <img class="burger" @click="displayMenu($event)" src="@/assets/burger-blanc.png" alt="menu">
     </div>
     <nav v-show="mobileMenu">
       <router-link to="/">
@@ -58,35 +60,36 @@ export default {
 }
 .logo{
   display: block;
-  width:15%;
-  max-width: 80px;
+  width:60px;
   margin-left: 15px;
 }
-.menuLogo{
+.burger{
   display: block;
   flex-direction: row-reverse;
-  width:10%;
-  min-width: 44px;
-  max-width: 50px;
+  width:44px;
   margin: auto 15px;
+  cursor: pointer;
 }
 nav{
-  background: #1A1C26;
+  background: var(--bg-color-navbarre);
   position: absolute;
   right:15px;
-  min-width:160px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  min-width:130px;
+  box-shadow: 0 8px 16px 0 var(--shadow);
   padding:10px;
 }
 
 .onglet{
-  color:white;
-  border: 1px solid #2E3345;
+  color:var(--font-color-white);
+  border: 1px solid var(--bg-color-menu-hover);
   padding : 10px 0 10px 15px;
   margin : 5px 0 5px 0;
 }
+.onglet:hover{
+  background: var(--bg-color-menu-hover) ;
+}
 .onglet:active {
-  background: #2E3345;
+  background: var(--bg-color-menu-hover);
 }
 .navPC{
   background: var(--bg-color-navbarre);
@@ -110,7 +113,7 @@ nav{
     margin: 20px auto;
   }
 
-  .menuLogo{
+  .burger{
     display: none;
   }
 
@@ -118,17 +121,13 @@ nav{
     width: 270px;
     min-height: 100vh;
     padding: 0 5px 0 5px;
+    position:sticky;
+    top:0;
+    height: 100vh;
+    overflow-y: auto;
 
-    align-self: flex-start;
   }
-  .onglet:hover {
-    background: #2E3345;
-  }
+
 }
-
-
-
-
-
 
 </style>

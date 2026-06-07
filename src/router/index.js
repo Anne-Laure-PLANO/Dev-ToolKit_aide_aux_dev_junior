@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from "@/views/Home.vue"
 import ReadmeGenerator from "@/views/ReadmeGenerator.vue"
-import New from "@/components/New.vue";
-import githelp from "@/views/githelp.vue";
+import ArticleCard from "@/components/ArticleCard.vue";
+import GitHelp from "@/views/GitHelp.vue";
 
 const routes = [
     {
@@ -18,12 +18,12 @@ const routes = [
     {
         path: "/card",
         name: "card",
-        component: New
+        component: ArticleCard
     },
     {
         path: "/git",
         name: "githelp",
-        component: githelp
+        component: GitHelp
     }
 
 ]

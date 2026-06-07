@@ -2,13 +2,15 @@
   --bg-color-component : #F7F7FA;
   --bg-color-general: #FFFFFF;
   --bg-color-code: #D9D9D9;
-  --border-color: #D9D9D9;
-  --bg-color-description: #01849B;
+  --bg-color-logo: #01849B;
   --bg-color-reset-button : #CD3B29;
   --bg-color-navbarre: #1A1C26;
 
-  --font-color-selected: #018449B;
-  --font-color-menu-readme: #73788C;
+  --bg-color-menu-hover: #2E3345;
+
+  --border-color: #D9D9D9;
+
+  --shadow: #73788C;
   --font-color-white: #ffffff;
   --font-color-black: #000000;
 
@@ -55,7 +57,7 @@ main{
   flex-direction: column;
 }
 .coloredBlock{
-  background: var(--bg-color-description);
+  background: var(--bg-color-logo);
   padding:5px;
   margin: 0 5px 0 5px;
   border-radius:20px;

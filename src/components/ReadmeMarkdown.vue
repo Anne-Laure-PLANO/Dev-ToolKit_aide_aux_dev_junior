@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "Markdown",
+  name: "ReadmeMarkdown",
   props:{
     md: {type: String},
 
@@ -12,7 +12,7 @@ export default {
 
 <template>
 <div>
-  <h2>Readme markdown</h2>
+  <h3>Readme markdown</h3>
     <div>
     <p v-if="md.length===0">Nothing here </p>
   <pre>{{ md }}</pre>

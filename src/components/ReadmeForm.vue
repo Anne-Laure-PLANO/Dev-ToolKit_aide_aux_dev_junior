@@ -3,7 +3,7 @@ import { skills }  from "../services/skills.js";
 import MultiSelectDropDown from "../components/MultiSelectDropDown.vue";
 
 export default {
-  name: "Form",
+  name: "ReadmeForm",
   computed: {
     skills() {
       return skills
@@ -31,7 +31,6 @@ export default {
       handler()
       {
         this.sendDataToParent();
-        console.log("dataToReturn.install : "+ this.dataToReturn.install)
       },
       deep: true
     }
@@ -43,7 +42,6 @@ export default {
     toggleSkill(data) {
       const skill = data;
       const index = this.dataToReturn.skills.findIndex(s => s.id === skill.id);
-      console.log("skill.install :" + JSON.stringify(skill.install));
       if (index === -1) {
         this.dataToReturn.skills.push(skill);
       } else {
@@ -81,7 +79,7 @@ export default {
       <legend>Statut </legend>
           <div>
             <input type="radio" name="status" v-model="dataToReturn.status" value ="inProgress" id="inProgress">
-            <label for="inProgress">en cours </label>
+            <label for="inProgress">En cours </label>
           </div>
           <div>
             <input type="radio" name="status" v-model="dataToReturn.status" value ="finished" id="finished">
@@ -89,7 +87,7 @@ export default {
           </div>
           <div>
               <input type="radio" name="status" v-model="dataToReturn.status" value ="maintenance" id="maintenance">
-              <label for="maintenance">En maintenance </label>
+              <label for="maintenance">En révision </label>
           </div>
     </fieldset>
     <fieldset>
@@ -156,7 +154,7 @@ fieldset{
   padding-top:10px;
 }
 legend{
-  color: var(--bg-color-description);
+  color: var(--bg-color-logo);
   padding-top:1rem;
   padding-bottom : 0.5rem;
 
@@ -184,15 +182,32 @@ textarea{
   flex-direction: column;
   justify-content: space-around;
 }
+
+
 .radioButton>div{
   flex:1;
 }
 .radioButton>div:hover{
-  color:var(--bg-color-description);
+  color:var(--bg-color-logo);
 
 }
 
 .install{
   display:block;
 }
+input[type="checkbox"], input[type="radio"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  vertical-align: middle;
+  accent-color: var(--bg-color-logo);
+}
+
+@media screen and (min-width: 1200px) {
+  input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
 </style>

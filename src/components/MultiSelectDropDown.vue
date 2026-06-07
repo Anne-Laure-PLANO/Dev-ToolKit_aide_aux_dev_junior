@@ -71,7 +71,7 @@ export default {
           <span v-if="hasSelection">🟢</span>
           <span v-else>⚪</span>
         </span>
-      Framework {{ skillTitle }}
+      Framework {{ skillTitle.toUpperCase() }}
     </div>
 
     <!-- List -->
@@ -86,7 +86,8 @@ export default {
 
         <!-- Checkbox -->
         <span class="checkbox">
-          <span v-if="selected.some(s => s.id === item.id)">🟢</span>
+          <span v-if="selected.some(s => s.id === item.id)">🟢
+</span>
           <span v-else>⚪</span>
         </span>
 
@@ -108,30 +109,33 @@ export default {
 
 .multiSelect {
   position: relative;
-  width: 220px;
+  min-width: 200px;
+  width: 50%;
+  max-width: 250px;
   margin:5px;
 }
 
 .button {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius:10px;
-  background: white;
+  background: var(--bg-color-general);
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 8px;
 }
 
 .button.active {
-  border: 2px solid green;
+  border: 2px solid var(--bg-color-logo);
 }
 
 .dropdown {
   position: absolute;
   width: 105%;
-  background: white;
-  border: 1px solid #ccc;
+  background: var(--bg-color-general);
+  border: 1px solid var(--border-color);
   margin-top: 5px;
   z-index:10;
 }
@@ -144,7 +148,7 @@ export default {
 }
 
 .option:hover {
-  background: #f3f3f3;
+  background: var(--border-color);
 }
 
 .checkbox {

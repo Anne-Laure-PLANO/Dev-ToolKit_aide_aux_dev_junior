@@ -17,21 +17,12 @@ export default {
 </script>
 
 <template>
-  <section>
-    <div>
-      <p v-if="renderedMarkdown.length===0">Nothing here </p>
-
-    </div>
-    <div class="content" v-html="renderedMarkdown"></div>
-  </section>
+<div class="content">
+    <p v-if="renderedMarkdown.length===0">Nothing here </p>
+    <output v-else v-html="renderedMarkdown"></output>
+</div>
 </template>
 
 <style scoped>
-section{
-  display: flex;
-  flex-direction: column;
-}
-.content{
-  flex:1;
-}
+
 </style>
