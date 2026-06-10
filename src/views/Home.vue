@@ -67,6 +67,7 @@ export default {
 </template>
 
 <style scoped>
+
 h2{
 text-align: center;
 }

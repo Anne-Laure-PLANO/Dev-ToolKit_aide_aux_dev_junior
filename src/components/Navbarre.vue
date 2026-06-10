@@ -32,19 +32,17 @@ export default {
       <router-link to="/">
         <img class="logo" src="@/assets/logo.png" alt="logo">
       </router-link>
-      <img class="burger" @click="displayMenu($event)" src="@/assets/burger-blanc.png" alt="menu">
+      <img class="burger" @click="displayMenu($event)" src="@/assets/burger-blanc.png" alt="ouvrir le menu de navigation">
     </div>
-    <nav v-show="mobileMenu">
+    <nav aria-label="Menu principal" v-show="mobileMenu">
       <router-link to="/">
         <div class="onglet"> 🏠 Accueil </div>
       </router-link>
       <router-link to="/readme">
-        <div class="onglet">📄 Générateur de README</div>
+        <div class="onglet"> 📄 Générateur de README </div>
       </router-link>
       <router-link to="/git">
-        <div class="onglet">
-          🔀 Aide Git
-        </div>
+        <div class="onglet"> 🔀 Aide Git </div>
       </router-link>
     </nav>
   </div>
@@ -78,7 +76,9 @@ nav{
   box-shadow: 0 8px 16px 0 var(--shadow);
   padding:10px;
 }
-
+a:-webkit-any-link{
+  text-decoration: none;
+}
 .onglet{
   color:var(--font-color-white);
   border: 1px solid var(--bg-color-menu-hover);

@@ -22,20 +22,17 @@ import Navbarre from "@/components/Navbarre.vue";
 }
 .app{
   flex:1;
-  overflow-y: auto; /* c'est .app qui scrolle, pas la page */
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   min-height: 0;
 }
 
 @media screen and (min-width : 1200px) {
-
   .container{
     flex-direction: row;
-    height: 100vh;
     align-items: stretch;
     overflow: hidden;
-
   }
 }
 </style>

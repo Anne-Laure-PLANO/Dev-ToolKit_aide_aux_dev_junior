@@ -14,7 +14,7 @@ export default {
 <div>
   <h3>Readme markdown</h3>
     <div>
-    <p v-if="md.length===0">Nothing here </p>
+    <p v-if="md.length===0">Aucun aperçu n'est disponible. </p>
   <pre>{{ md }}</pre>
 
     </div>
@@ -28,6 +28,6 @@ div{
 
 }
 pre{
-  font-family: var(--font-family-code),serif;
+  font-family: var(--font-family-code),monospace;
 }
 </style>

@@ -1,6 +1,5 @@
 export async function fetchNews (){
     const url = "https://www.developpez.com/index/rss"
-    //https://www.journalduhacker.net/rss"
 
     const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${url}`);
     if (!response.ok) {
@@ -27,10 +26,8 @@ function htmlToText (html){
     return doc.body.textContent || "";
 }
 
-
 function getOrigin(link) {
     const url = new URL(link);
-
     return url.origin;
 }
 

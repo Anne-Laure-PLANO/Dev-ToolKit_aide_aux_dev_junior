@@ -101,12 +101,7 @@ ${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() +
   <header>
     <h1>Dev-ToolKit</h1>
     <p>Générateur de README</p>
-  </header>
-  <main>
-    <div class="coloredBlock">
-      <p>Créez un README adapté à vos projets</p>
-    </div>
-    <div class="readmeMenu">
+    <nav aria-label="Navigation du générateur de README" class="readmeMenu">
       <div @click="activeComponent = 'A'"
       :class="{active: activeComponent==='A'}"
       >
@@ -114,7 +109,6 @@ ${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() +
       </div>
       <div @click="activeComponent = 'B'"
            :class="{active: activeComponent==='B'}"
-
       >
         Markdown
       </div>
@@ -123,10 +117,14 @@ ${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() +
       >
         Aperçu
       </div>
-
+    </nav>
+  </header>
+  <main>
+    <div class="coloredBlock">
+      <p>Créez un README adapté à vos projets</p>
     </div>
-    <div class="displayComponent">
 
+    <div class="displayComponent">
       <ReadmeForm
           :key="formKey"
           v-show="activeComponent === 'A'"
@@ -134,7 +132,6 @@ ${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() +
       />
       <ReadmeMarkdown v-show="activeComponent === 'B'"
           :md= "markdown"
-
       />
       <ReadmeResult v-show="activeComponent === 'C'"
           :mdFinal = "markdown"
