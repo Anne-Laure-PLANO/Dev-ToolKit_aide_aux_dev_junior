@@ -67,11 +67,10 @@ export default {
       let result3 = "## Commandes de lancement :\n\n" +
           this.cb + "\n";
 
-      for (const skill of this.result.skills){
-        result1 += skill.installLinux + "  \n";
-        result2 += skill.installWindows + "  \n";
-        result3 += skill.exec + "  \n";
-      }
+        result1 += this.result.installLinux + "  \n";
+        result2 += this.result.installWindows + "  \n";
+        result3 += this.result.exec + "  \n";
+
       return result1 + this.cb + "\n\n" + result2 + this.cb + "\n\n" + result3 + this.cb + "\n\n";
     },
     generateMarkdown(){

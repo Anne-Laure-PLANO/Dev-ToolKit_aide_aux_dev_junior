@@ -50,17 +50,16 @@ export default {
         this.updateTextAreas();
 
     },
-    updateTextAreas(){
+    updateTextAreas() {
       this.dataToReturn.installLinux = "";
       this.dataToReturn.installWindows = "";
       this.dataToReturn.exec = "";
-      for (let i = 0 ; i<this.dataToReturn.skills.length ; i++){
+      for (let i = 0; i < this.dataToReturn.skills.length; i++) {
         this.dataToReturn.installLinux += this.dataToReturn.skills[i].installLinux + "\n";
         this.dataToReturn.installWindows += this.dataToReturn.skills[i].installWindows + "\n";
         this.dataToReturn.exec += this.dataToReturn.skills[i].exec + "\n";
       }
     }
-
   }
 }
 </script>
