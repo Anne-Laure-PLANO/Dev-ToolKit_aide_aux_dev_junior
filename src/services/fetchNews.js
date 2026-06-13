@@ -19,19 +19,19 @@ export async function fetchNews (){
     return cleanArticles;
 }
 
-function htmlToText (html){
+export function htmlToText (html){
     const doc = new DOMParser()
         .parseFromString(html, "text/html");
 
     return doc.body.textContent || "";
 }
 
-function getOrigin(link) {
+export function getOrigin(link) {
     const url = new URL(link);
     return url.origin;
 }
 
-function formatDate(dateString) {
+export function formatDate(dateString) {
     return new Date(dateString).toLocaleDateString("fr-FR", {
         year: "numeric",
         month: "long",

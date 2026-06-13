@@ -11,15 +11,13 @@ export default {
 </script>
 
 <template>
-<div>
-  <h3>Readme markdown</h3>
     <div>
     <p v-if="md.length===0">Aucun aperçu n'est disponible. </p>
+
   <pre>{{ md }}</pre>
 
     </div>
 
-</div>
 </template>
 
 <style scoped>

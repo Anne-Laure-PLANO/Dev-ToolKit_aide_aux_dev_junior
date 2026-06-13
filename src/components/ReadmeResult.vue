@@ -17,10 +17,8 @@ export default {
 </script>
 
 <template>
-<div class="content">
-    <p v-if="renderedMarkdown.length===0"> Aucun aperçu n'est disponible </p>
+    <p v-if="renderedMarkdown.length===0">Aucun aperçu n'est disponible.</p>
     <output v-else v-html="renderedMarkdown"></output>
-</div>
 </template>
 
 <style scoped>

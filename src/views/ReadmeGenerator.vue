@@ -80,7 +80,7 @@ ${(this.result.description)? this.result.description + "  \n" : ""}
 ${this.markdownStatus()}
 ${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() :""}
 ${(this.result.installLinux) ? this.markdownInstall() :""}
-`
+`.trim()
     },
     copyMarkdown(){
       navigator.clipboard.writeText(this.markdown);
@@ -104,19 +104,15 @@ ${(this.result.installLinux) ? this.markdownInstall() :""}
     <nav aria-label="Navigation du générateur de README" class="readmeMenu">
       <div @click="activeComponent = 'A'"
       :class="{active: activeComponent==='A'}"
-      >
-        Formulaire
-      </div>
+      >Formulaire </div>
+
       <div @click="activeComponent = 'B'"
            :class="{active: activeComponent==='B'}"
-      >
-        Markdown
-      </div>
+      >Markdown</div>
+
       <div @click="activeComponent = 'C'"
            :class="{active: activeComponent==='C'}"
-      >
-        Aperçu
-      </div>
+      >Aperçu</div>
     </nav>
   </header>
   <main>
