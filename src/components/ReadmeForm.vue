@@ -54,10 +54,15 @@ export default {
       this.dataToReturn.installLinux = "";
       this.dataToReturn.installWindows = "";
       this.dataToReturn.exec = "";
-      for (let i = 0; i < this.dataToReturn.skills.length; i++) {
-        this.dataToReturn.installLinux += this.dataToReturn.skills[i].installLinux + "\n";
-        this.dataToReturn.installWindows += this.dataToReturn.skills[i].installWindows + "\n";
-        this.dataToReturn.exec += this.dataToReturn.skills[i].exec + "\n";
+
+      const sorted = [...this.dataToReturn.skills]
+          .filter(skill => skill.installLinux)
+          .sort((a, b) =>a.priority - b.priority);
+
+      for (let i = 0; i < sorted.length; i++) {
+        this.dataToReturn.installLinux += sorted[i].installLinux + "\n";
+        this.dataToReturn.installWindows += sorted[i].installWindows + "\n";
+        this.dataToReturn.exec += sorted[i].exec + "\n";
       }
     }
   }
@@ -92,6 +97,18 @@ export default {
     <fieldset>
       <legend>Technologies utilisées</legend>
       <div class="column">
+        <div v-for="skill in skills.static"
+             :key="skill.id"
+        >
+          <input  type="checkbox"
+                  :name="skill.title"
+                  @click="toggleSkill(skill)"
+                  :checked = "(dataToReturn.skills.findIndex(s=> s.id === skill.id) !== -1)"
+                  :value="skill"
+                  :id=" skill.id"
+          >
+          <label :for=" skill.id ">{{ skill.title }}</label>
+        </div>
         <div v-for="skill in skills.native"
           :key="skill.id"
         >

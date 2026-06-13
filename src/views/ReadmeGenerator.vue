@@ -78,7 +78,8 @@ export default {
 `${this.result.title? "# " + this.result.title + "  \n" : ""}
 ${(this.result.description)? this.result.description + "  \n" : ""}
 ${this.markdownStatus()}
-${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() + this.markdownInstall() :""}
+${(this.result.skills && this.result.skills.length >0) ? this.markdownSkills() :""}
+${(this.result.installLinux) ? this.markdownInstall() :""}
 `
     },
     copyMarkdown(){

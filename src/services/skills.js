@@ -1,32 +1,35 @@
 export const skills = {
-   native: [
+    static: [
         {
             id: 1,
             title: "HTML5",
             img: "https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white",
-            installLinux: "sudo apt install html5",
-            installWindows: "choco install html5",
-            required: "Navigateur web",
-            exec: "open index.html"
+            installLinux: "",
+            installWindows: "",
+            required: "",
+            exec: ""
         },
         {
             id: 2,
             title: "CSS3",
             img: "https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white",
-            installLinux: "sudo apt install css3",
-            installWindows: "choco install css3",
-            required: "Navigateur web",
-            exec: "open style.css"
+            installLinux: "",
+            installWindows: "",
+            required: "",
+            exec: ""
         },
         {
             id: 3,
             title: "JavaScript",
             img: "https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black",
-            installLinux: "sudo apt install nodejs npm",
-            installWindows: "choco install nodejs",
-            required: "Node.js",
-            exec: "node app.js"
+            installLinux: "",
+            installWindows: "",
+            required: "",
+            exec: "",
         },
+    ],
+
+    native: [
         {
             id: 4,
             title: "Python",
@@ -34,7 +37,8 @@ export const skills = {
             installLinux: "sudo apt install python3 python3-pip",
             installWindows: "choco install python",
             required: "Python 3",
-            exec: "python main.py"
+            exec: "python main.py",
+            priority: 1
         },
         {
             id: 5,
@@ -43,7 +47,8 @@ export const skills = {
             installLinux: "sudo apt install php",
             installWindows: "choco install php",
             required: "PHP 8+",
-            exec: "php index.php"
+            exec: "php index.php",
+            priority: 1
         },
         {
             id: 6,
@@ -52,7 +57,8 @@ export const skills = {
             installLinux: "sudo apt install docker.io",
             installWindows: "choco install docker-desktop",
             required: "Docker Engine",
-            exec: "docker compose up"
+            exec: "docker compose up",
+            priority: 1
         }
     ],
 
@@ -67,7 +73,8 @@ export const skills = {
                     installLinux: "npm install -D tailwindcss",
                     installWindows: "npm install -D tailwindcss",
                     required: "Node.js",
-                    exec: "npx tailwindcss init"
+                    exec: "npx tailwindcss init",
+                    priority: 2
                 },
                 {
                     id: 8,
@@ -76,7 +83,8 @@ export const skills = {
                     installLinux: "npm install bootstrap",
                     installWindows: "npm install bootstrap",
                     required: "Node.js",
-                    exec: "npm run dev"
+                    exec: "npm run dev",
+                    priority: 2
                 },
                 {
                     id: 9,
@@ -85,7 +93,8 @@ export const skills = {
                     installLinux: "npm install -D sass",
                     installWindows: "npm install -D sass",
                     required: "Node.js",
-                    exec: "sass style.scss style.css"
+                    exec: "sass style.scss style.css",
+                    priority: 2
                 }
             ]
         },
@@ -99,7 +108,8 @@ export const skills = {
                     installLinux: "npm create vue@latest",
                     installWindows: "npm create vue@latest",
                     required: "Node.js",
-                    exec: "npm run dev"
+                    exec: "npm run dev",
+                    priority: 2
                 },
                 {
                     id: 11,
@@ -108,7 +118,8 @@ export const skills = {
                     installLinux: "npm create vite@latest",
                     installWindows: "npm create vite@latest",
                     required: "Node.js",
-                    exec: "npm run dev"
+                    exec: "npm run dev",
+                    priority: 2
                 },
                 {
                     id: 12,
@@ -117,7 +128,8 @@ export const skills = {
                     installLinux: "npm install -g @angular/cli",
                     installWindows: "npm install -g @angular/cli",
                     required: "Node.js",
-                    exec: "ng serve"
+                    exec: "ng serve",
+                    priority: 2
                 },
                 {
                     id: 13,
@@ -126,7 +138,8 @@ export const skills = {
                     installLinux: "npx create-next-app@latest",
                     installWindows: "npx create-next-app@latest",
                     required: "Node.js",
-                    exec: "npm run dev"
+                    exec: "npm run dev",
+                    priority: 2
                 },
                 {
                     id: 14,
@@ -135,7 +148,8 @@ export const skills = {
                     installLinux: "sudo apt install nodejs npm",
                     installWindows: "choco install nodejs",
                     required: "NPM",
-                    exec: "node server.js"
+                    exec: "node server.js",
+                    priority: 1
                 },
                 {
                     id: 15,
@@ -144,7 +158,8 @@ export const skills = {
                     installLinux: "npm create vite@latest",
                     installWindows: "npm create vite@latest",
                     required: "Node.js",
-                    exec: "npm run dev"
+                    exec: "npm run dev",
+                    priority: 2
                 },
                 {
                     id: 16,
@@ -153,7 +168,8 @@ export const skills = {
                     installLinux: "npm install express",
                     installWindows: "npm install express",
                     required: "Node.js",
-                    exec: "node server.js"
+                    exec: "node server.js",
+                    priority: 2
                 },
                 {
                     id: 17,
@@ -162,7 +178,8 @@ export const skills = {
                     installLinux: "npm install vue-router",
                     installWindows: "npm install vue-router",
                     required: "Vue.js",
-                    exec: "npm run dev"
+                    exec: "npm run dev",
+                    priority: 3
                 }
             ]
         },
@@ -176,7 +193,8 @@ export const skills = {
                     installLinux: "composer create-project symfony/skeleton my_project",
                     installWindows: "composer create-project symfony/skeleton my_project",
                     required: "PHP + Composer",
-                    exec: "symfony server:start"
+                    exec: "symfony server:start",
+                    priority: 2
                 },
                 {
                     id: 19,
@@ -185,7 +203,8 @@ export const skills = {
                     installLinux: "composer create-project laravel/laravel example-app",
                     installWindows: "composer create-project laravel/laravel example-app",
                     required: "PHP + Composer",
-                    exec: "php artisan serve"
+                    exec: "php artisan serve",
+                    priority: 2
                 }
             ]
         },
@@ -199,7 +218,8 @@ export const skills = {
                     installLinux: "pip install django",
                     installWindows: "pip install django",
                     required: "Python 3 + pip",
-                    exec: "python manage.py runserver"
+                    exec: "python manage.py runserver",
+                    priority: 2
                 },
                 {
                     id: 21,
@@ -208,7 +228,8 @@ export const skills = {
                     installLinux: "pip install fastapi uvicorn",
                     installWindows: "pip install fastapi uvicorn",
                     required: "Python 3 + pip",
-                    exec: "uvicorn main:app --reload"
+                    exec: "uvicorn main:app --reload",
+                    priority: 2
                 },
                 {
                     id: 22,
@@ -217,7 +238,8 @@ export const skills = {
                     installLinux: "pip install flask",
                     installWindows: "pip install flask",
                     required: "Python 3 + pip",
-                    exec: "flask run"
+                    exec: "flask run",
+                    priority: 2
                 }
             ]
         }
