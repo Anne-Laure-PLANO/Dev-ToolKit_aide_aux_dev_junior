@@ -32,7 +32,9 @@ export default {
       <router-link to="/">
         <img class="logo" src="@/assets/logo.png" alt="logo">
       </router-link>
-      <img class="burger" @click="displayMenu($event)" src="@/assets/burger-blanc.png" alt="ouvrir le menu de navigation">
+      <img class="burger" @click="displayMenu($event)"
+           src="@/assets/burger-blanc.png"
+           alt="ouvrir le menu de navigation">
     </div>
     <nav aria-label="Menu principal" v-show="mobileMenu">
       <router-link to="/">
