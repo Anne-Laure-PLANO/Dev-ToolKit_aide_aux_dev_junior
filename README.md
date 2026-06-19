@@ -20,8 +20,6 @@ Ce README a été généré avec cet outil. Pour le tester : https://anne-laure-
 ### Depuis un terminal Linux :  
 
 ```bash
-sudo apt install html5  
-sudo apt install css3  
 sudo apt install nodejs npm  
 npm create vue@latest  
 npm create vite@latest  
@@ -31,8 +29,6 @@ npm install vue-router
 ### Depuis un terminal Windows :
 
 ```cmd
-choco install html5  
-choco install css3  
 choco install nodejs  
 npm create vue@latest  
 npm create vite@latest  
@@ -41,12 +37,8 @@ npm install vue-router
 
 ## Commandes de lancement :
 
-```
-open index.html  
-open style.css  
+``` 
 node app.js  
-npm run dev  
-npm run dev  
 npm run dev  
 ```
 
