@@ -5,7 +5,6 @@ export async function fetchNews (){
     if (!response.ok) {
         throw new Error('Erreur API');
     }
-
     const data = await response.json()
         const cleanArticles = data.items.map((article)=>{
             return {
