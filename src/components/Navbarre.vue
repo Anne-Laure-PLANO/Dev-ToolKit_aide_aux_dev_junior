@@ -12,6 +12,11 @@ export default {
       window.removeEventListener("click", this.closeMenuOutside);
 
     },
+
+    /*
+      Toggles the mobile menu open/closed.
+      Adds or removes a window click listener to close the menu when clicking outside.
+    */
     displayMenu(event){
       event.stopPropagation();
       this.mobileMenu = !this.mobileMenu;
@@ -36,6 +41,7 @@ export default {
            src="@/assets/burger-blanc.png"
            alt="ouvrir le menu de navigation">
     </div>
+
     <nav aria-label="Menu principal" v-show="mobileMenu">
       <router-link to="/">
         <div class="onglet"> 🏠 Accueil </div>

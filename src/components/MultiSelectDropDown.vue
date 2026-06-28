@@ -62,7 +62,7 @@ export default {
 <template>
   <div class="multiSelect">
 
-    <!-- Bouton -->
+    <!-- Button -->
     <div
         class="button"
         :class="{ active: hasSelection }"

@@ -69,7 +69,7 @@ export default {
 <style scoped>
 
 h2{
-text-align: center;
+  text-align: center;
 }
 
 </style>

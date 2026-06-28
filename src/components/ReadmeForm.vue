@@ -39,6 +39,8 @@ export default {
     sendDataToParent(){
       this.$emit("formUpdated",this.dataToReturn)
     },
+
+    // Toggles a skill in the selected skills list and updates the text areas
     toggleSkill(data) {
       const skill = data;
       const index = this.dataToReturn.skills.findIndex(s => s.id === skill.id);
@@ -50,6 +52,8 @@ export default {
         this.updateTextAreas();
 
     },
+
+    // Rebuilds the text areas content from skills, sorted by priority
     updateTextAreas() {
       this.dataToReturn.installLinux = "";
       this.dataToReturn.installWindows = "";

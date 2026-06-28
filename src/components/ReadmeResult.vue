@@ -8,6 +8,7 @@ export default {
     mdFinal: {type: String}
   },
   computed:{
+    // Converts markdown to HTML and sanitizes it to prevent XSS attacks
     renderedMarkdown(){
       const html = marked(this.mdFinal);
       return DOMPurify.sanitize(html);

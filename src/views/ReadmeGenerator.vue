@@ -35,6 +35,11 @@ export default {
     }
   },
   methods:{
+
+    /*
+     Returns a markdown image based on the current result status.
+     Possible statuses: inProgress, finished, maintenance.
+     */
     markdownStatus() {
       switch (this.result.status) {
         case "inProgress":
@@ -47,6 +52,11 @@ export default {
           return ""
       }
     },
+
+    /*
+     Builds a markdown section listing used technologies.
+     Each skill is rendered as an image.
+     */
     markdownSkills(){
       let result= "## Technologies utilisées  \n";
       for (const skill of this.result.skills){
@@ -55,6 +65,12 @@ export default {
       result += "  \n";
     return result;
     },
+    /*
+     Builds a markdown installation guide containing:
+     - Linux installation commands
+     - Windows installation commands
+     - Execution commands
+     */
     markdownInstall(){
       let result1 = "# Guide d'installation  \n" +
           "## Commandes d'installation  \n" +
@@ -67,12 +83,17 @@ export default {
       let result3 = "## Commandes de lancement :\n\n" +
           this.cb + "\n";
 
-        result1 += this.result.installLinux + "  \n";
-        result2 += this.result.installWindows + "  \n";
-        result3 += this.result.exec + "  \n";
+      result1 += this.result.installLinux + "  \n";
+      result2 += this.result.installWindows + "  \n";
+      result3 += this.result.exec + "  \n";
 
       return result1 + this.cb + "\n\n" + result2 + this.cb + "\n\n" + result3 + this.cb + "\n\n";
     },
+
+    /*
+     Generates the final markdown document by combining all available sections:
+     title, description, status, skills, and installation instructions.
+     */
     generateMarkdown(){
       this.markdown =
 `${this.result.title? "# " + this.result.title + "  \n" : ""}
@@ -101,6 +122,7 @@ ${(this.result.installLinux) ? this.markdownInstall() :""}
   <header>
     <h1>Dev-ToolKit</h1>
     <p>Générateur de README</p>
+
     <nav aria-label="Navigation du générateur de README" class="readmeMenu">
       <div @click="activeComponent = 'A'"
       :class="{active: activeComponent==='A'}"
