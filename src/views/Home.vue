@@ -57,7 +57,7 @@ export default {
       :title ="article.title"
       :lastUpdate = "article.pubDate"
       :source = "article.guid"
-      :picture = "article.enclosure.link"
+      :picture = "article.image"
 
       />
 

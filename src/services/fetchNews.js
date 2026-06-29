@@ -1,22 +1,23 @@
 export async function fetchNews (){
     const url = "https://www.developpez.com/index/rss"
 
-    const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${url}`);
+    const response = await fetch(`https://x2j.dev/rss?url=${url}`);
     if (!response.ok) {
         throw new Error('Erreur API');
     }
-
     // code parsing
     const data = await response.json()
 
+
     // code formatting
-    const cleanArticles = data.items.map((article)=>{
+    const cleanArticles = data.rss.channel.item.map((article)=>{
         return {
             ...article,
             title: htmlToText(article.title),
             description: htmlToText(article.description),
             guid: getOrigin(article.guid),
-            pubDate: formatDate(article.pubDate)
+            pubDate: formatDate(article.pubDate),
+            image: article.enclosure?.["@_url"] ?? null
         }
     })
     return cleanArticles;
@@ -36,7 +37,6 @@ export function getOrigin(link) {
     const url = new URL(link);
     return url.origin;
 }
-
 
 /*
   Formats a date string into a French localized date format (fr-FR).
